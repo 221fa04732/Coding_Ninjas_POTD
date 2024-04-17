@@ -1,0 +1,18 @@
+#include <bits/stdc++.h> 
+vector<int> addOneToNumber(vector<int> arr)
+{
+    int  j=0;
+    while(j<arr.size() && arr[j]==0)
+        arr.erase(arr.begin());
+    int carry=1,i=arr.size()-1;
+    while(i>=0 && carry)
+    {
+        int x=arr[i]+carry;
+        arr[i]=(x%10);
+        carry=x/10;
+        i--;
+    }
+    if(carry==1)
+        arr.insert(arr.begin(),1);
+    return arr;
+}
