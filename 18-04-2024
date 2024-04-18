@@ -1,0 +1,27 @@
+#include <bits/stdc++.h> 
+int check(int a)
+{
+    int temp=a;
+    while(temp)
+    {
+        int x=temp%10;
+        if(x==0)
+            return 0;
+        else if(a%x!=0)
+            return 0;
+        temp=temp/10;
+    }
+    return 1;
+}
+vector < int > findAllSelfDividingNumbers(int lower, int upper) 
+{
+    vector<int>ans;
+    for(int i=lower;i<=upper;i++)
+    {
+         if(check(i))
+         {
+             ans.push_back(i);
+         }
+    }
+    return ans;
+}
