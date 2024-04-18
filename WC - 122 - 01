@@ -1,0 +1,6 @@
+int teamScore (int a, int b, int c, int d) 
+{
+   vector<int>ans={a,b,c,d};
+   sort(ans.begin(),ans.end());
+   return ans[3]*ans[2]+ans[1]*ans[0];
+}
