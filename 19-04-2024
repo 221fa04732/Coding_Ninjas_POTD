@@ -1,0 +1,13 @@
+string longestPrefixSuffix(string &str)
+{
+    string str1=str;
+    string str2=str;
+    str1.pop_back();
+    str2.erase(str2.begin());
+    while(str1!=str2)
+    {
+        str1.pop_back();
+        str2.erase(str2.begin());
+    }
+    return str1;
+}
