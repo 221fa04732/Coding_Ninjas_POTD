@@ -1,0 +1,15 @@
+#include <bits/stdc++.h> 
+void interLeaveQueue(queue < int > & q) 
+{
+    vector<int>ans;
+    while(q.size())
+    {
+        ans.push_back(q.front());
+        q.pop();
+    }
+    for(int i=0;i<ans.size()/2;i++)
+    {
+        q.push(ans[i]);
+        q.push(ans[i+ans.size()/2]);
+    }
+}
