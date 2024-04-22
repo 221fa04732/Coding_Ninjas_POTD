@@ -1,0 +1,28 @@
+Node<int>* rearrangeList(Node<int>* head)
+{
+    Node<int>* temp=head;
+    vector<int>ans;
+    while(temp)
+    {
+        ans.push_back(temp->data);
+        temp=temp->next;
+    }
+    temp=head;
+    int i=0,j=0,k=ans.size()-1;
+    while(temp)
+    {
+        if(i%2==0)
+        {
+            temp->data=ans[j];
+            j++;
+        }
+        else 
+        {
+            temp->data=ans[k];
+            k--;
+        }
+        i++;
+        temp=temp->next;
+    }
+    return head;
+}
