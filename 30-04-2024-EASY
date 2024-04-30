@@ -1,0 +1,36 @@
+#include <bits/stdc++.h> 
+vector <int> chuninNinja(int n , int m , vector < vector < int > > arr)
+{
+   vector<int>row;
+   vector<int>col;
+   vector<int>ans;
+   for(int i=0;i<n;i++)
+   {
+      int minum=INT_MAX;
+     for (int j = 0; j < m; j++) 
+     {
+        minum=min(minum,arr[i][j]);
+     }
+     row.push_back(minum);
+   }
+   for(int i=0;i<m;i++)
+   {
+      int maxium=0;
+     for (int j = 0; j < n; j++) 
+     {
+        maxium=max(maxium,arr[j][i]);
+     }
+     col.push_back(maxium);
+   }
+   for(int i=0;i<n;i++)
+   {
+      for(int j=0;j<m;j++)
+      {
+         if(arr[i][j]==row[i] && arr[i][j]==col[j])
+         {
+            ans.push_back(arr[i][j]);
+         }
+      }
+   }
+   return ans;
+}
